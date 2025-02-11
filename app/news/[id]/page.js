@@ -10,6 +10,7 @@ const NewsDetailPage = ({ params }) => {
       </header>
       <h1>{newsItem.title}</h1>
       <time dateTime={newsItem.date}>{newsItem.date}</time>
+      <p>{newsItem.content}</p>
     </article>
   );
 };
