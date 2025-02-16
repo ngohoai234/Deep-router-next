@@ -1,11 +1,14 @@
 import NewsList from '@/component/new-list';
-import { DUMMY_NEWS } from '@/dummy-news';
 
-export default function NewsPage() {
+export default async function NewsPage() {
+  const response = await fetch('http://localhost:8080/news');
+
+  const news = await response.json();
+
   return (
     <>
       <h1>News Page</h1>
-      <NewsList news={DUMMY_NEWS} />
+      <NewsList news={news} />
     </>
   );
 }
